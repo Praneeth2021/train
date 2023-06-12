@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Course Catalogue</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+      header {
+        background-color: #2abac7;
+        color: #fff;
+        padding: 20px;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      section {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      article {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #eee;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+      }
+      article:hover {
+        background-color: #f5f5f5;
+        cursor: pointer;
+      }
+      .youtube{
+        padding-left:20%;
+        padding-top:10%;
+      }
+        .slider {
+            position: relative;
+            width: 570px;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slider-video {
+            flex: 0 0 640px;
+        }
+        
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .next {
+            right: 20px;
+        }
+        .slidesection{
+          width:fit-content;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Course Catalogue</h1>
+    </header>
+    <main>
+      <section>
+        <h2>ENH COURSE</h2>
+        <article>
+          <h3>Sail Point</h3>
+          <p>IQ module,FAM module,Identitfy AI module</p>
+          <a href="https://www.sailpoint.com/">Read More.</a>
+        </article>
+        <article>
+          <h3>Cyber Ark</h3>
+          <p>Certified sales professional,Privileged Access Security Course</p>
+          <a href="https://www.cyberark.com/resources/white-papers/the-new-face-of-identity-and-access-management?utm_source=google&utm_medium=paid_search&utm_content=new_face_of_identity_and_access_management_whitepaper&utm_campaign=land_access&gclid=CjwKCAiA0cyfBhBREiwAAtStHJ8nJs5BGxcx3ZM0utouOqHaw9qZsKfbvE-ClC9RS5LjsTAUyaA8vxoCBncQAvD_BwE">Read More.</a>
+        </article>
+        <article>
+          <h3>Okta</h3>
+          <p>Sales Fundamentals,Access Gateway-Messaging ,Access Gateway-Technical Training</p>
+        </article>
+      </section>
+      <div class="youtube">
+      <section class="slidesection">
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slider-video">
+                    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5JePitatwnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="slider-video">
+                   
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/ufa1ym1twWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="slider-video">
+
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/QE8ML2y7ftI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+  
+                </div>
+                <div class="slider-video">
+                   
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/wq7Mb9pdprk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <button class="slider-button prev">&#10094;</button>
+            <button class="slider-button next">&#10095;</button>
+        </div>
+    </section>
+  </div>
+    <script>
+        const sliderContainer = document.querySelector('.slider-container');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const videoWidth = 640;
+        const totalSlides = 4;
+        let slideIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (slideIndex === 0) {
+                slideIndex = totalSlides - 1;
+            } else {
+                slideIndex--;
+            }
+            sliderContainer.style.transform = `translateX(-${slideIndex * videoWidth}px)`;
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (slideIndex === totalSlides - 1) {
+                slideIndex = 0;
+            } else {
+                slideIndex++;
+            }
+            sliderContainer.style.transform = `translateX(-${slideIndex * videoWidth}px)`;
+        });
+            document.addEventListener("contextmenu", (event) => {
+             event.preventDefault();
+          });
+    </script>
+     
+    </main>
+
+  </body>
+</html>
